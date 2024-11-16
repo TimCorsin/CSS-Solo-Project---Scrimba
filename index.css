@@ -1,22 +1,67 @@
 html, body {
     margin: 0;
     padding: 0;
+    font-family: "Source Sans 3";
 }
 
 header{
-    width: 375px;
     height: 67px;
     display: flex;
     justify-content: space-between;
-    margin: 0 auto;
     padding: 16px 0;
     border-bottom: 1px solid #C6C6C6;
 }
+/* LAYOUT */
+header,
+main,
+footer{
+    width: 375px;
+    margin: 0 auto;
+    /* border: 2px solid green; */
+}
+
+.poster-info{
+    display: flex;
+}
+
+h1,
+h2{
+    margin-bottom: 0;
+}
+
+h2{
+    margin-top: 0;
+}
+/* IMAGERY */
 .logo{
     width: 127;
+    margin-left: 10px;
 }
+.user{
+    margin: auto 15px;
+}
+
+.avatars,
 .user{
     width: 34px;
     border-radius: 50%;
-    margin: auto 0;
+}
+
+.avatar-images{
+    margin: 10px;
+}
+
+.post-img{
+    width: 375px;
+}
+
+/* TYPOGRAPHY */
+h1{
+    font-size: 13px;
+    font-weight: 700;
+}
+
+h2{
+    font-size: 12px;
+    font-weight: 400;
 }
