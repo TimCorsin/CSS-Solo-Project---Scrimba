@@ -17,7 +17,7 @@ main,
 footer{
     width: 375px;
     margin: 0 auto;
-    /* border: 2px solid green; */
+
 }
 
 .poster-info{
@@ -32,11 +32,17 @@ h2{
 h2{
     margin-top: 0;
 }
+
+.container{
+    margin-bottom: 0;
+}
+
 /* IMAGERY */
 .logo{
     width: 127;
     margin-left: 10px;
 }
+
 .user{
     margin: auto 15px;
 }
@@ -55,13 +61,60 @@ h2{
     width: 375px;
 }
 
+.icon-img{
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: .25rem;
+    margin-top: 8px;
+    margin-right: 8px;
+    padding: .75rem;
+    display: inline-block;
+}
+
+.icon-img:first-child{
+    background-image: url(/images/icons/heart-black.svg);
+}
+.icon-img:first-child:hover{
+    background-image: url(/images/icons/heart-red.svg);
+}
+
+.icon-img:nth-child(2){
+    background-image: url(/images/icons/comment-black.svg);
+}
+.icon-img:nth-child(2):hover{
+    background-image: url(/images/icons/comment-red.svg);
+}
+
+.icon-img:last-child{
+    background-image: url(/images/icons/paper-plane-black.svg);
+}
+.icon-img:last-child:hover{
+    background-image: url(/images/icons/paper-plane-red.svg);
+}
+
+.icons{
+    padding: 0 0 0 15px;
+}
+
 /* TYPOGRAPHY */
 h1{
-    font-size: 13px;
+    font-size: 0.813rem;
     font-weight: 700;
 }
 
 h2{
-    font-size: 12px;
+    font-size: 0.75rem;
     font-weight: 400;
+}
+
+.comment{
+    font-weight: 400;
+}
+
+.likes h1{
+    margin-left: 15px;
+}
+
+.last{
+    margin-bottom: 15px;
 }
