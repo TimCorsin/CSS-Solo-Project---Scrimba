@@ -77,6 +77,7 @@ h2{
 .icon-img:first-child{
     background-image: url(/images/icons/heart-black.svg);
 }
+
 .icon-img:first-child:hover{
     background-image: url(/images/icons/heart-red.svg);
 }
@@ -84,6 +85,7 @@ h2{
 .icon-img:nth-child(2){
     background-image: url(/images/icons/comment-black.svg);
 }
+
 .icon-img:nth-child(2):hover{
     background-image: url(/images/icons/comment-red.svg);
 }
@@ -91,6 +93,7 @@ h2{
 .icon-img:last-child{
     background-image: url(/images/icons/paper-plane-black.svg);
 }
+
 .icon-img:last-child:hover{
     background-image: url(/images/icons/paper-plane-red.svg);
 }
@@ -101,8 +104,9 @@ h2{
 
 /* ALERTS */
 .like-alert{
-    z-index: 1;
+    z-index: 10;
 }
+
 /* TYPOGRAPHY */
 h1{
     font-size: 0.813rem;

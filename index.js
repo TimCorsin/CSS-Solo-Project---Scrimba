@@ -41,7 +41,7 @@ function likeMessage() {
     likeAlert.className='like-alert' //add a classname to the div so it can be styled
     likeAlert.textContent="♥️ post liked" // sets the alert textContent
 
-    document.body.appendChild(likeAlert)  // adds the likeAlert div to the body of the html file
+    document.querySelector(".icons").appendChild(likeAlert)  // adds the likeAlert div to the body of the html file
     
     likeAlert.style.opacity = 0
     likeAlert.style.transition = 'opacity 0.fs ease-in-out'
@@ -53,7 +53,7 @@ function likeMessage() {
             likeAlert.style.opacity = 0
 
             setTimeout(() => {
-                document.body.removeChild(likeAlert)
+                document.querySelector(".icons").removeChild(likeAlert)
             }, 500)
         }, 2000)
     }, 0)
