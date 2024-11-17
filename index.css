@@ -61,6 +61,7 @@ h2{
     width: 375px;
 }
 
+/* BUTTONS AND LINKS */
 .icon-img{
     background-size: contain;
     background-repeat: no-repeat;
@@ -69,6 +70,8 @@ h2{
     margin-right: 8px;
     padding: .75rem;
     display: inline-block;
+    background-color: white;
+    border: none;
 }
 
 .icon-img:first-child{
@@ -96,6 +99,10 @@ h2{
     padding: 0 0 0 15px;
 }
 
+/* ALERTS */
+.like-alert{
+    z-index: 1;
+}
 /* TYPOGRAPHY */
 h1{
     font-size: 0.813rem;
