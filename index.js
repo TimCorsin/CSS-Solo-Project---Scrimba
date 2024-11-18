@@ -27,25 +27,79 @@ const posts = [
         likes: 152
     }
 ]
-
+const viewFeedBtn = document.getElementById('view-feed')
+const mainEl = document.querySelector('main')
 const likeBtn = document.querySelector(".like")
 const commentBtn = document.querySelector(".comment")
 const dmBtn = document.querySelector(".dm")
 
-likeBtn.addEventListener("click", function() {
+viewFeedBtn.addEventListener('click', function() {
+    document.querySelector(".btn").remove()
+    generatePosts()
+    
+})
 
-// console.log(" heart emoji clicked")
+function generatePosts() {
+    const feedContainer = document.querySelector('.feed-container')
+
+    posts.forEach(post => {
+        const postHTML = `
+            <div class="container">
+                <section class="poster-info">
+                    <div class="avatar-images">
+                        <img
+                        src="${post.avatar}"
+                        class="avatars"
+                        alt="${post.name}'s avatar"
+                        />
+                    </div>
+                    <div class="user-info">
+                        <h1>${post.name}</h1>
+                        <h2>${post.location}</h2>
+                    </div>
+                </section>
+
+                    <img
+                        src="${post.post}"
+                        alt="self portrait by ${post.name}"
+                        class="post-img"
+                    />
+            </div>
+            <section class="comments">
+                <div class="icons">
+                    <button class="icon-img like"></button>
+                    <button class="icon-img comment"></button>
+                    <button class="icon-img dm"></button>
+                </div>
+                <div class="likes">
+                    <h1>${post.likes.toLocaleString()}likes</h1>
+                    <h1 class="last">
+                        ${post.username}
+                        <span class="comment">${post.comment}</span>
+                    </h1>
+                </div>
+            </section>
+        `
+
+        const postElement = document.createElement('article')
+        postElement.innerHTML = postHTML
+        feedContainer.appendChild(postElement)
+    })
+    const likeBtns = document.querySelectorAll(".like")
+    likeBtns.forEach(btn => {
+        btn.addEventListener("click", likeMessage)
+    })
+}
 
 function likeMessage() {
     const likeAlert = document.createElement('div') // creates a new div when likeMessage() is called
     likeAlert.className='like-alert' //add a classname to the div so it can be styled
     likeAlert.textContent="♥️ post liked" // sets the alert textContent
-
-    document.querySelector(".icons").appendChild(likeAlert)  // adds the likeAlert div to the body of the html file
-    
+    // FInd the closest .icons section to the clicked button
+    const iconsSection = event.target.closest('.icons')
+    iconsSection.appendChild(likeAlert) // adds the likeAlert div to the body of the html file
     likeAlert.style.opacity = 0
     likeAlert.style.transition = 'opacity 0.fs ease-in-out'
-
     setTimeout(() => {
         likeAlert.style.opacity = 1
 
@@ -58,18 +112,3 @@ function likeMessage() {
         }, 2000)
     }, 0)
 }
-
-likeMessage()
-
-})
-
-
-
-// function generatePost() {
-//     for (let i = 0; i < posts.length; i++) {
-//         let post += `
-
-//         `
-
-//     }
-// }
