@@ -85,10 +85,10 @@ function generatePosts() {
         postElement.innerHTML = postHTML
         feedContainer.appendChild(postElement)
     })
-    const likeBtns = document.querySelectorAll(".like")
-    likeBtns.forEach(btn => {
-        btn.addEventListener("click", (event) => likeMessage(event))
-    })
+    // const likeBtns = document.querySelectorAll(".like")
+    // likeBtns.forEach(btn => {
+    //     btn.addEventListener("click", (event) => likeMessage(event))
+    // })
 }
 
 // function likeMessage(event) {
