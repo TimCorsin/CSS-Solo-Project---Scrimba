@@ -87,28 +87,30 @@ function generatePosts() {
     })
     const likeBtns = document.querySelectorAll(".like")
     likeBtns.forEach(btn => {
-        btn.addEventListener("click", likeMessage)
+        btn.addEventListener("click", (event) => likeMessage(event))
     })
 }
 
-function likeMessage() {
-    const likeAlert = document.createElement('div') // creates a new div when likeMessage() is called
-    likeAlert.className='like-alert' //add a classname to the div so it can be styled
-    likeAlert.textContent="♥️ post liked" // sets the alert textContent
-    // FInd the closest .icons section to the clicked button
-    const iconsSection = event.target.closest('.icons')
-    iconsSection.appendChild(likeAlert) // adds the likeAlert div to the body of the html file
-    likeAlert.style.opacity = 0
-    likeAlert.style.transition = 'opacity 0.fs ease-in-out'
-    setTimeout(() => {
-        likeAlert.style.opacity = 1
+// function likeMessage(event) {
+//     const likeAlert = document.createElement('div') // creates a new div when likeMessage() is called
+//     likeAlert.className='like-alert' //add a classname to the div so it can be styled
+//     likeAlert.textContent="♥️ post liked" // sets the alert textContent
+//     // FInd the closest .icons section to the clicked button
+//     const iconsSection = event.currentTarget.closest('.icons')
+//     iconsSection.appendChild(likeAlert) // adds the likeAlert div to the body of the html file
+//     likeAlert.style.opacity = 0
+//     likeAlert.style.transition = 'opacity 0.5s ease-in-out'
+//     setTimeout(() => {
+//         likeAlert.style.opacity = 1
 
-        setTimeout(() => {
-            likeAlert.style.opacity = 0
+//         setTimeout(() => {
+//             likeAlert.style.opacity = 0
 
-            setTimeout(() => {
-                document.querySelector(".icons").removeChild(likeAlert)
-            }, 500)
-        }, 2000)
-    }, 0)
-}
+//             setTimeout(() => {
+//                 if (likeAlert.parentNode === iconsSection) {        // CHeck to make sure that the removeChild() only works if the element is actually a child.
+//                     iconsSection.removeChild(likeAlert)
+//                 }
+//             }, 500)
+//         }, 2000)
+//     }, 0)
+// }
